@@ -1,0 +1,39 @@
+// @import "node_modules/spectre.css/src/buttons";
+// .btn btn-sm {
+//   @include button-variant(success-color);
+// }
+
+html, body, main{
+  min-height: 100vh;
+}
+
+.home-page {
+  background-color: lightgrey;
+}
+
+.fact-image {
+  width: 45%;
+  height: 200px;
+}
+
+.vertical-timeline-element-title {
+  font-size: 1.8 rm
+}
+
+
+.date {
+  font-weight: bold;
+}
+
+.accordion-header {
+  text-align: center;
+  font-size: 40px;
+  color: 807fe2;
+  font-family: Merriweather;
+}
+
+.footer {
+  text-align: center;
+  color: #3b4351;
+  margin-top: 0%;
+}

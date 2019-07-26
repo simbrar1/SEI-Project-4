@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-from models.breed import Year, YearSchema
+from models.year import Year, YearSchema
 
 api = Blueprint('years', __name__)
 year_schema = YearSchema()
