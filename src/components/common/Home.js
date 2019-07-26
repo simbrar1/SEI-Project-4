@@ -33,10 +33,11 @@ class Home extends React.Component {
                 {year.facts.map(fact => (
                   <VerticalTimelineElement key={fact.id}
                     className="vertical-timeline-element"
-                    date={<div><p className="date">{fact.date_of_fact}</p><img className="fact-image" src={fact.image} /></div>}
+                    date={<img className="fact-image" src={fact.image} />}
                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     icon=""
                   >
+                    <h4>{fact.date_of_fact}</h4>
                     <h3 className="vertical-timeline-element-title">{fact.name}</h3>
                     <p>{fact.bio}</p>
                   </VerticalTimelineElement>

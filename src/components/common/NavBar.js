@@ -30,14 +30,14 @@ class NavBar extends React.Component {
           </li>
           <li className="tab-item">
             {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
-            {Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Create New Fact</Link>}
+            {Auth.isAuthenticated() && <Link to="/new/facts" className="navbar-item">Create New Fact</Link>}
           </li>
           <li className="tab-item">
             {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
             {Auth.isAuthenticated() && <a className="navbar-item" onClick={this.logout}>Logout</a>}
           </li>
 
-  
+
 
         </ul>
       </div>
