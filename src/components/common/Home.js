@@ -39,9 +39,10 @@ class Home extends React.Component {
                     icon=""
                   >
                     <Link to={`/facts/${fact.id}`}>
-                      <h4>{fact.date_of_fact}</h4>
-                      <h3 className="vertical-timeline-element-title">{fact.name}</h3>
-                      <p>{fact.bio}</p>
+                      <h5 className="dates">{fact.date_of_fact}</h5>
+                      <h5 className="location">{fact.location}</h5>
+                      <h4 className="vertical-timeline-element-title">{fact.name}</h4>
+
                     </Link>
                   </VerticalTimelineElement>
                 ))}

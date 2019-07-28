@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 
 
@@ -27,7 +27,7 @@ class FactsShow extends React.Component {
   }
 
   isOwner() {
-    return Auth.getPayload().sub === this.state.fact.creator
+    return Auth.getPayload().sub === this.state.fact.creator.id
   }
 
   render() {
@@ -40,7 +40,7 @@ class FactsShow extends React.Component {
 
         <div className="card-header">
           <div className="card-title h4">{fact.name}</div>
-          <div className="card-subtitle h5">{fact.date_of_fact}</div>
+          <div className="card-subtitle h5">{fact.date_of_fact} {fact.location}</div>
         </div>
         <div className="card-body">
         </div>
@@ -51,6 +51,10 @@ class FactsShow extends React.Component {
           <img src={fact.image} alt={fact.name} className="img-responsive" />
         </div>
         {this.isOwner() && <button onClick={this.handleDelete} className="btn">Delete</button>}
+        {this.isOwner() && <button><Link className="button" to={`/facts/${fact.id}/edit`}
+        >
+        Edit
+        </Link></button>}
       </div>
     )
   }
@@ -62,4 +66,4 @@ export default FactsShow
 
 //took out .id at the end of the is owner
 // isOwner() {
-//   return Auth.getPayload().sub === this.state.fact.creator
+//   return Auth.getPayload().sub === this.state.fact.creator.id

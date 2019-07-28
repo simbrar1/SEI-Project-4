@@ -14,6 +14,16 @@ const FactsForm = ({ data, years, handleChange, handleSubmit}) => (
         />
       </div>
       <div className="col-7">
+        <label className="form-label" htmlFor="input-example-">Location</label>
+        <input className="form-input"
+          name="location"
+          type="text"
+          placeholder="Location"
+          onChange={handleChange}
+          value={data.location || ''}
+        />
+      </div>
+      <div className="col-7">
         <label className="form-label" htmlFor="input-example-">Date of Fact</label>
         <input className="form-input"
           name="date_of_fact"

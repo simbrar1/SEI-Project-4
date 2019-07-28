@@ -18,22 +18,25 @@ a {
 .fact-image {
   width: 45%;
   height: 200px;
+  padding: 0px 7px 40px 7px;
 }
 
 
 .vertical-timeline-element-content h3 {
-  color: red;
+  color: #3b4351;
   font-size: 1.5rem;
 }
+//title of fact
 
 .vertical-timeline-element-content h4 {
   color: #303742 !important;
 }
 
-.vertical-timeline-element-content p {
-  color: blue !important;
-  font-size: 0.75rem !important;
-}
+// .vertical-timeline-element-content p {
+//   color: blue !important;
+//   font-size: 0.75rem !important;
+// }
+//bio for the facts
 
 
 .date {
@@ -65,3 +68,13 @@ a {
   width: 75%;
   height: 400px;
 }
+
+.location {
+  color: lightgrey !important;
+  text-transform: uppercase;
+
+}
+
+ .dates {
+   color: lightgrey !important;
+ }
