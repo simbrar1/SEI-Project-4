@@ -188,7 +188,7 @@ with app.app_context():
     name='Pearl Harbour',
     location='Hawaii',
     date_of_fact=datetime.strptime('1941-12-07', '%Y-%m-%d'),
-    bio='On Sunday morning, 7 December 1941, a Japanese war fleet arrived at the American naval base at Pearl Harbor, on Hawaii. The Japanese bombarded the Americans with bombs and torpedoes. When the attack was over, more than 3,500 American were left dead or wounded. Eighteen warships had been sunk and hundreds of aircraft had been destroyed or damaged.Japan attacked the United States to prevent the Americans from thwarting Japanese plans for expansion in Asia. The surprise attack was carried out to perfection, but Japan did not defeat the US. The damage caused was soon repaired and the main American aircraft carriers were in other ports at the time of the attack. The United States were able to retaliate quickly.On that same day, Japan also attacked Singapore, Malaysia, Hong Kong, Thailand, as well as American bases in the Philippines and Guam. As a result, Japan was now at war with Great Britain and Canada. Australia, New Zealand and the Netherlands also declared war on Japan, and the war spread rapidly across the East-Asia.The American population regarded the attack as a cowardly act and stood behind its governments decision to declare war on Japan. In response, Hitler declared war on America on 11 December 1941, for Germany was an ally of Japan. This meant that Hitler had gained another strong opponent. From then on, the United States fought with the Allies against Nazi Germany.',
+    bio='On Sunday morning, 7 December 1941, a Japanese war fleet arrived at the American naval base at Pearl Harbor, on Hawaii. The Japanese bombarded the Americans with bombs and torpedoes. When the attack was over, more than 3,500 American were left dead or wounded. Eighteen warships had been sunk and hundreds of aircraft had been destroyed or damaged. Japan attacked the United States to prevent the Americans from thwarting Japanese plans for expansion in Asia. The surprise attack was carried out to perfection, but Japan did not defeat the US. The damage caused was soon repaired and the main American aircraft carriers were in other ports at the time of the attack. The United States were able to retaliate quickly. On that same day, Japan also attacked Singapore, Malaysia, Hong Kong, Thailand, as well as American bases in the Philippines and Guam. As a result, Japan was now at war with Great Britain and Canada. Australia, New Zealand and the Netherlands also declared war on Japan, and the war spread rapidly across the East-Asia.The American population regarded the attack as a cowardly act and stood behind its governments decision to declare war on Japan. In response, Hitler declared war on America on 11 December 1941, for Germany was an ally of Japan. This meant that Hitler had gained another strong opponent. From then on, the United States fought with the Allies against Nazi Germany.',
     image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/10/97/1097b1d6-5389-433f-8e7c-9073a20890ed/nara_ww2-126.jpg__1536x1536_q85_subsampling-2.jpg',
     year=year1941,
     creator=sim
@@ -198,6 +198,15 @@ with app.app_context():
     year1942 = Year(
     year=1942
     )
+    singapore_surrenders = Fact(
+    name='British colony of Singapore surrenders to Japanese forces',
+    location='Singapore',
+    date_of_fact=datetime.strptime('1942-02-15', '%Y-%m-%d'),
+    bio='This catastrophic defeat was a fatal blow to British prestige and signalled the fall of the empire in the Far East. The Japanese unexpectedly attacked down the Malay Peninsula instead of from the sea, where Singapores defences were concentrated. About 70,000 men were taken prisoner, many of whom would not survive the war due to the brutal conditions of their incarceration.',
+    image='http://2.bp.blogspot.com/-q1OheduX02U/USDtBAaA2aI/AAAAAAAAAB4/mms8own5KYI/s1600/20080218-jsoldiers01+jap+in+shang+tales+of+old+shang.jpg',
+    year=year1942,
+    creator=sim
+    )
     yellow_badge = Fact(
     name='The introduction of the yellow badge in the Netherlands',
     location='Netherlands',
@@ -205,6 +214,56 @@ with app.app_context():
     bio='On 29 April 1942, the Nazis introduced another humiliating measure that concerned the Dutch Jews. From 3 May onwards, they would have to start wearing a badge on their clothes: a six-pointed yellow Star of David with the word Jew in the middle.The badge made it possible to identify people in the street as Jews. The Nazis wanted to further isolate the Jews from the non-Jewish Dutch. Not wearing the badge was severely punished. You could even be sent to a concentration camp if you didn’t.The Jewish Council was ordered to distribute the badges among the Dutch Jews within three days. The Jews were forced to buy four each at four cents a piece. Children from the age of 6 had to wear them, too. In total, 569,355 yellow badges were distributed.Some Jews wore them with pride, many others felt humiliated. Some non-Jewish Dutch responded to the new measure as well. Some protested by wearing homemade stars with the words Catholic or Aryan. Others made a point of greeting Jews in the street or giving up their seats on the trams. But over time, the indignation diminished and the gap between Jews and non-Jews widened.',
     image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/14/7b/147b04fa-5f25-4184-be7d-942770f173fe/jodenster_1942_nederland.jpg__1536x1536_q85_subsampling-2.jpg',
     year=year1942,
+    creator=sim
+    )
+    midway = Fact(
+    name='Battle of Midway',
+    location='Midway Attol',
+    date_of_fact=datetime.strptime('1942-02-15', '%Y-%m-%d'),
+    bio='The USA defeated the Japanese navy at the Battle of Midway. Following this victory, the US navy was able to push the Japanese back.',
+    image='https://cdn.britannica.com/s:300x300/80/71380-004-B4724C34.jpg',
+    year=year1942,
+    creator=sim
+    )
+    stalingrad = Fact(
+    name='Battle of Stalingard',
+    location='Russia',
+    date_of_fact=datetime.strptime('1942-11-12', '%Y-%m-%d'),
+    bio='In the summer of 1942, Hitler launched a major offensive into southern Russia, seeking to destroy what was left of the Soviet Army and ultimately capture the Caucasus oilfields. The initial advance went well, and the German Sixth Army under General Friedrich von Paulus was ordered to capture the city. But Stalin demanded it be defended at all costs. Every available soldier and civilian was mobilised. Stalingrad was heavily bombed by the Luftwaffe, and the ruins became the scene for months of bitter street fighting. By October most of the city was in German hands, but the Russians clung onto the banks of the Volga, across which they ferried vital reserves.',
+    image='https://cdni.rbth.com/rbthmedia/images/2018.02/article/5a746d7785600a37210db97e.jpg',
+    year=year1942,
+    creator=sim
+    )
+
+
+    year1943 = Year(
+    year=1943
+    )
+    leave_amsterdam = Fact(
+    name='All Jews must leave Amsterdam',
+    location='Amsterdam',
+    date_of_fact=datetime.strptime('1943-05-20', '%Y-%m-%d'),
+    bio='On 20 May 1943, approximately 750 Jews reported to the military police building near Muiderpoort train station in Amsterdam. They complied with a measure taken by Rauter, head of the German SS and the police, that no Jew could stay in Amsterdam without permission. Only Jews carrying a so-called Sperre, a proof of postponement, were allowed to stay on.They arrived in Westerbork in the evening. At least two of them, a couple, were put on transport five days later to the Sobibor extermination camp, where they were gassed on 28 May 1943. We do not know what happened to the others, because their names are not known.Rauter was dissatisfied with the low turnout on this day and so, the Germans held a big raid in the centre of Amsterdam a few days later. They arrested around 3,000 people, who were subsequently deported to Westerbork. The Nazis also forced the Jewish Council to take away the Sperre of a large number of Jews and to select them for transport to Westerbork.',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/35/09/35093f1e-9e0b-47a0-94f7-7c752d73688b/niod_96789jpg.jpeg__1536x1536_q85_subsampling-2.jpg',
+    year=year1943,
+    creator=sim
+    )
+    last_raid = Fact(
+    name='Last raid in Amsterdam: 17,000 Jews arrested',
+    location='Amsterdam',
+    date_of_fact=datetime.strptime('1943-06-20', '%Y-%m-%d'),
+    bio='On Sunday, 20 June 1943, the Nazis held a major raid in Amsterdam. The action had been secretly prepared by the Nazis. German and Dutch police officers closed off neighbourhoods in the east and south of Amsterdam. This was where most of the Amsterdam Jews lived.From 3:30 in the morning, loudspeaker cars were driving around, ordering the Jews to report at assembly points. Those who did not come voluntarily were forcibly removed from their homes. The raid lasted well into the night and continued the next day. Approximately 5,500 Jews were arrested.A month later, the occupying forces held a smaller raid. On 29 September 1943, a final major raid was held. Approximately 10,000 Jews were arrested and taken to Camp Westerbork. There were now almost no Jews left in Amsterdam.',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/e6/45/e64556e2-a51c-4512-976f-86e0d5a57115/niod_96799.jpg__1536x1536_q85_subsampling-2.jpg',
+    year=year1943,
+    creator=sim
+    )
+    italy = Fact(
+    name='Italy surrenders',
+    location='Italy',
+    date_of_fact=datetime.strptime('1943-09-03', '%Y-%m-%d'),
+    bio='Mussolini had been thrown out of office and the new government of Italy surrendered to the British and the USA. They then agreed to join the allies. The Germans took control of the Italian army, freed Mussolini from imprisonment and set him up as head of a puppet government in Northern Italy. This blocked any further allied advance through Italy.',
+    image='https://media.pri.org/s3fs-public/styles/story_main/public/images/2019/03/benito_mussolini_and_adolf_hitler.jpg?itok=GOpLMhw8',
+    year=year1943,
     creator=sim
     )
 
@@ -239,5 +298,15 @@ with app.app_context():
 
     db.session.add(year1942)
     db.session.add(yellow_badge)
+    db.session.add(singapore_surrenders)
+    db.session.add(midway)
+    db.session.add(stalingrad)
+
+
+    db.session.add(year1943)
+    db.session.add(leave_amsterdam)
+    db.session.add(last_raid)
+    db.session.add(italy)
+
 
     db.session.commit()
