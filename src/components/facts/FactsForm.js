@@ -73,7 +73,6 @@ const FactsForm = ({ data, years, handleChange, handleSubmit}) => (
           ))
           }
         </select>
-
       </div>
     </div>
     <button className="btn btn-sm">Create</button>

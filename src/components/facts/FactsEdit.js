@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import FactsForm from './FactsForm'
-import Auth from '../lib/auth'
+import Auth from '../../lib/Auth'
 
 class FactsEdit extends React.Component {
   constructor() {
@@ -26,11 +26,11 @@ class FactsEdit extends React.Component {
   handleSubmit(e){
     e.preventDefault()
 
-    axios.post('/api/facts', this.state.data,{
-      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    axios.put(`/api/facts/${this.props.match.params.id}`, this.state.data,{
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(() => this.props.history.push('/'))
-      .catch(err => console.log(err.response.data))
+      .then(() => this.props.history.push(`/facts/${this.props.match.params.id}`))
+      .catch(err => console.log(err.response))
   }
 
 
@@ -42,7 +42,6 @@ class FactsEdit extends React.Component {
             data={this.state.data}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
-            buttonText="Update Event"
           />
         </div>
       </section>
