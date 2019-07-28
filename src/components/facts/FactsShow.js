@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 
 
@@ -8,18 +8,18 @@ class FactsShow extends React.Component {
   constructor() {
     super()
 
-    this.state = { facts: null}
+    this.state = { fact: null}
     this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
-    axios.get('/api/years')
-      .then(res => this.setState({ years: res.data}))
+    axios.get(`/api/facts/${this.props.match.params.id}`)
+      .then(res => this.setState({ fact: res.data}))
       .catch(err => console.log(err))
   }
 
   handleDelete() {
-    axios.delete(`/api/years${this.props.match.params.id}`, {
+    axios.delete(`/api/facts/${this.props.match.params.id}`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push('/'))
@@ -27,10 +27,39 @@ class FactsShow extends React.Component {
   }
 
   isOwner() {
-    return Auth.getPayload().sub === this.state.cheese.user._id
+    return Auth.getPayload().sub === this.state.fact.creator
+  }
+
+  render() {
+    if (!this.state.fact) return null
+    const { fact } =  this.state
+    this.isOwner()
+    return (
+
+      <div className="card">
+
+        <div className="card-header">
+          <div className="card-title h4">{fact.name}</div>
+          <div className="card-subtitle h5">{fact.date_of_fact}</div>
+        </div>
+        <div className="card-body">
+        </div>
+        <div className="card-footer">
+          <div className="card-title h7">{fact.bio}</div>
+        </div>
+        <div className="card-image">
+          <img src={fact.image} alt={fact.name} className="img-responsive" />
+        </div>
+        {this.isOwner() && <button onClick={this.handleDelete} className="btn">Delete</button>}
+      </div>
+    )
   }
 
 
 }
 
 export default FactsShow
+
+//took out .id at the end of the is owner
+// isOwner() {
+//   return Auth.getPayload().sub === this.state.fact.creator

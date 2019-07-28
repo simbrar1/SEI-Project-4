@@ -7,6 +7,10 @@ html, body, main{
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .home-page {
   background-color: lightgrey;
 }
@@ -32,7 +36,6 @@ html, body, main{
 }
 
 
-
 .date {
   font-weight: bold;
 }
@@ -55,4 +58,10 @@ html, body, main{
 }
 .accordion input:checked ~ .accordion-body, .accordion[open] .accordion-body {
   max-height: 75vh;
+}
+
+
+.img-responsive {
+  width: 75%;
+  height: 400px;
 }

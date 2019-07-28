@@ -12,6 +12,7 @@ import Footer from './components/common/Footer'
 import Login from './components/auth/Login'
 
 import NewFacts from './components/facts/NewFacts'
+import FactsShow from './components/facts/FactsShow'
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/new/facts" component={NewFacts} />
+          <Route path="/facts/:id" component={FactsShow} />
           <Route exact path="/" component={Home} />
         </Switch>
         <Footer />

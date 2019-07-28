@@ -11,6 +11,7 @@ class Fact(db.Model, BaseModel):
     __tablename__ = 'facts'
 
     name = db.Column(db.String(100), nullable=False, unique=True)
+    location = db.Column(db.String(100), nullable=False)
     date_of_fact = db.Column(db.Date, nullable=False)
     bio = db.Column(db.String(600), nullable=False)
     image = db.Column(db.Text, nullable=False)

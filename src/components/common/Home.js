@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
@@ -34,12 +35,14 @@ class Home extends React.Component {
                   <VerticalTimelineElement key={fact.id}
                     className="vertical-timeline-element"
                     date={<img className="fact-image" src={fact.image} />}
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    iconStyle={{ background: 'rgb(59, 67, 81)', color: '#fff' }}
                     icon=""
                   >
-                    <h4>{fact.date_of_fact}</h4>
-                    <h3 className="vertical-timeline-element-title">{fact.name}</h3>
-                    <p>{fact.bio}</p>
+                    <Link to={`/facts/${fact.id}`}>
+                      <h4>{fact.date_of_fact}</h4>
+                      <h3 className="vertical-timeline-element-title">{fact.name}</h3>
+                      <p>{fact.bio}</p>
+                    </Link>
                   </VerticalTimelineElement>
                 ))}
               </VerticalTimeline>

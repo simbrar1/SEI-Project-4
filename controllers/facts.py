@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, g
 from models.fact import Fact, FactSchema, Comment, CommentSchema
 from models.year import Year
 from lib.secure_route import secure_route
@@ -33,6 +33,7 @@ def create():
     if errors:
         return jsonify(errors), 422
     fact.year = Year.query.filter_by(year=data['year_number']).first()
+    fact.creator = g.current_user
     fact.save()
     return fact_schema.jsonify(fact), 201
 
