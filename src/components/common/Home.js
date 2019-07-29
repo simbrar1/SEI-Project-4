@@ -31,7 +31,7 @@ class Home extends React.Component {
             </label>
             <div className="accordion-body">
               <VerticalTimeline>
-                {year.facts.map(fact => (
+                {year.facts.sort((a,b) => new Date(a.date_of_fact) - new Date(b.date_of_fact)).map(fact => (
                   <VerticalTimelineElement key={fact.id}
                     className="vertical-timeline-element"
                     date={<img className="fact-image" src={fact.image} />}

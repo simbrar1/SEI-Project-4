@@ -48,6 +48,7 @@ def update(fact_id):
     fact, errors = fact_schema.load(data, instance=fact, partial=True)
     if errors:
         return jsonify(errors), 422
+    fact.year = Year.query.filter_by(year=data['year_number']).first()
     fact.save()
     return fact_schema.jsonify(fact), 202
 

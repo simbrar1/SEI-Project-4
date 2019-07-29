@@ -14,8 +14,21 @@ class FactsEdit extends React.Component {
 
   componentDidMount() {
     axios.get(`/api/facts/${this.props.match.params.id}`)
-      .then(res => this.setState({ data: res.data }))
+      .then(res => {
+        const data = res.data
+        data.year_number = res.data.year.year
+        this.setState({ data }, () => this.getYears())
+      })
       .catch(err => console.log(err.response))
+  }
+
+  getYears() {
+    axios.get('/api/years')
+      .then(res => {
+        const years = res.data.map(year => year.year)
+        this.setState({ years })
+      })
+      .catch(err => console.log(err))
   }
 
   handleChange({ target: { name, value}}) {
@@ -25,8 +38,9 @@ class FactsEdit extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-
-    axios.put(`/api/facts/${this.props.match.params.id}`, this.state.data,{
+    const data = this.state.data
+    delete data.year
+    axios.put(`/api/facts/${this.props.match.params.id}`, data,{
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(() => this.props.history.push(`/facts/${this.props.match.params.id}`))
@@ -35,11 +49,15 @@ class FactsEdit extends React.Component {
 
 
   render() {
+    if (!this.state.years) return null
+    console.log(this.state)
     return(
       <section className="section">
         <div className="main">
           <FactsForm
             data={this.state.data}
+            years={this.state.years}
+            submitText="Update"
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FactsForm = ({ data, years, handleChange, handleSubmit}) => (
+const FactsForm = ({ data, years, submitText, handleChange, handleSubmit}) => (
   <form onSubmit={handleSubmit}>
     <div className="form-group">
       <div className="col-7">
@@ -65,7 +65,7 @@ const FactsForm = ({ data, years, handleChange, handleSubmit}) => (
           className="form-select"
           name="year_number"
           onChange={handleChange}
-          defaultValue={data.year || ''}
+          defaultValue={data.year_number || ''}
         >
           <option disabled value="">Choose a Year</option>
           {years.map(year => (
@@ -75,7 +75,7 @@ const FactsForm = ({ data, years, handleChange, handleSubmit}) => (
         </select>
       </div>
     </div>
-    <button className="btn btn-sm">Create</button>
+    <button className="btn btn-sm">{submitText}</button>
   </form>
 )
 

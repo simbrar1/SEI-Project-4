@@ -13,7 +13,9 @@ import Login from './components/auth/Login'
 
 import NewFacts from './components/facts/NewFacts'
 import FactsShow from './components/facts/FactsShow'
-// import FactsEdit from './components/facts/FactsEdit'
+import FactsEdit from './components/facts/FactsEdit'
+import SecureRoute from './components/common/SecureRoute'
+
 
 
 const App = () => {
@@ -24,8 +26,8 @@ const App = () => {
         <Switch>
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-          <Route path="/new/facts" component={NewFacts} />
-
+          <Route path="/facts/:id/edit" component={FactsEdit} />
+          <SecureRoute path="/new/facts" component={NewFacts} />
           <Route path="/facts/:id" component={FactsShow} />
           <Route exact path="/" component={Home} />
         </Switch>
@@ -35,7 +37,7 @@ const App = () => {
   )
 }
 
-// <Route path="/facts/:id/edit" component={FactsEdit} />
+
 
 ReactDOM.render(
   <App />,

@@ -51,6 +51,7 @@ class NewFacts extends React.Component {
           <FactsForm
             data={this.state.data}
             years={this.state.years}
+            submitText="Create"
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />

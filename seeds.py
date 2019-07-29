@@ -311,7 +311,7 @@ with app.app_context():
     location='Paris, France',
     date_of_fact=datetime.strptime('1944-07-22', '%Y-%m-%d'),
     bio='On 25th August 1944 The French capital of Paris was liberated from the Germans, as allied troops stormed in and overthrew the enemy.',
-    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/24/38/2438fceb-3ed2-4aa9-aaea-66ba00943b9a/ushmm_754295.jpg__1536x1536_q85_subsampling-2.jpg',
+    image='http://binaryapi.ap.org/cf559287f7e6da11af9f0014c2589dfb/preview.jpg?wm=api',
     year=year1944,
     creator=sim
     )

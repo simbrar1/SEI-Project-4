@@ -9,7 +9,10 @@ class FactsShow extends React.Component {
     super()
 
     this.state = { fact: null}
+    this.handleCommentChange = this.handleCommentChange.bind(this)
+    this.handleCommentSubmit = this.handleCommentSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.isOwner = this.isOwner.bind(this)
   }
 
   componentDidMount() {
@@ -26,6 +29,27 @@ class FactsShow extends React.Component {
       .catch(err => console.log(err.response))
   }
 
+  handleCommentChange({ target: { name, value } }) {
+    const comment = { ...this.state.comment, [name]: value }
+    this.setState({ comment })
+  }
+
+  handleCommentSubmit(e){
+    e.preventDefault()
+
+    axios.post(`/api/facts/${this.props.match.params.id}/comments`, this.state.comment, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+
+      .then(res => this.setState({ fact: res.data, comment: {} }))
+      .catch(err => console.log(err.response))
+  }
+
+
+  isCommentOwner(user) {
+    return Auth.getPayload().sub === user._id
+  }
+
   isOwner() {
     return Auth.getPayload().sub === this.state.fact.creator.id
   }
@@ -37,7 +61,6 @@ class FactsShow extends React.Component {
     return (
 
       <div className="card">
-
         <div className="card-header">
           <div className="card-title h4">{fact.name}</div>
           <div className="card-subtitle h5">{fact.date_of_fact} {fact.location}</div>
@@ -48,13 +71,15 @@ class FactsShow extends React.Component {
           <div className="card-title h7">{fact.bio}</div>
         </div>
         <div className="card-image">
-          <img src={fact.image} alt={fact.name} className="img-responsive" />
+          <img src={fact.image} alt={fact.name}  />
         </div>
-        {this.isOwner() && <button onClick={this.handleDelete} className="btn">Delete</button>}
-        {this.isOwner() && <button><Link className="button" to={`/facts/${fact.id}/edit`}
-        >
+        <span>
+          {this.isOwner() && <button onClick={this.handleDelete} className="btn">Delete</button>}
+          {this.isOwner() && <button><Link className="button" to={`/facts/${fact.id}/edit`}
+          >
         Edit
-        </Link></button>}
+          </Link></button>}
+        </span>
       </div>
     )
   }
