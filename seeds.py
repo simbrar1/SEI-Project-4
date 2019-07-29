@@ -218,7 +218,7 @@ with app.app_context():
     )
     midway = Fact(
     name='Battle of Midway',
-    location='Midway Attol',
+    location='Midway Attol, Ocean',
     date_of_fact=datetime.strptime('1942-02-15', '%Y-%m-%d'),
     bio='The USA defeated the Japanese navy at the Battle of Midway. Following this victory, the US navy was able to push the Japanese back.',
     image='https://cdn.britannica.com/s:300x300/80/71380-004-B4724C34.jpg',
@@ -241,7 +241,7 @@ with app.app_context():
     )
     leave_amsterdam = Fact(
     name='All Jews must leave Amsterdam',
-    location='Amsterdam',
+    location='Amsterdam, Netherlands',
     date_of_fact=datetime.strptime('1943-05-20', '%Y-%m-%d'),
     bio='On 20 May 1943, approximately 750 Jews reported to the military police building near Muiderpoort train station in Amsterdam. They complied with a measure taken by Rauter, head of the German SS and the police, that no Jew could stay in Amsterdam without permission. Only Jews carrying a so-called Sperre, a proof of postponement, were allowed to stay on.They arrived in Westerbork in the evening. At least two of them, a couple, were put on transport five days later to the Sobibor extermination camp, where they were gassed on 28 May 1943. We do not know what happened to the others, because their names are not known.Rauter was dissatisfied with the low turnout on this day and so, the Germans held a big raid in the centre of Amsterdam a few days later. They arrested around 3,000 people, who were subsequently deported to Westerbork. The Nazis also forced the Jewish Council to take away the Sperre of a large number of Jews and to select them for transport to Westerbork.',
     image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/35/09/35093f1e-9e0b-47a0-94f7-7c752d73688b/niod_96789jpg.jpeg__1536x1536_q85_subsampling-2.jpg',
@@ -250,10 +250,19 @@ with app.app_context():
     )
     last_raid = Fact(
     name='Last raid in Amsterdam: 17,000 Jews arrested',
-    location='Amsterdam',
+    location='Amsterdam, Netherlands',
     date_of_fact=datetime.strptime('1943-06-20', '%Y-%m-%d'),
     bio='On Sunday, 20 June 1943, the Nazis held a major raid in Amsterdam. The action had been secretly prepared by the Nazis. German and Dutch police officers closed off neighbourhoods in the east and south of Amsterdam. This was where most of the Amsterdam Jews lived.From 3:30 in the morning, loudspeaker cars were driving around, ordering the Jews to report at assembly points. Those who did not come voluntarily were forcibly removed from their homes. The raid lasted well into the night and continued the next day. Approximately 5,500 Jews were arrested.A month later, the occupying forces held a smaller raid. On 29 September 1943, a final major raid was held. Approximately 10,000 Jews were arrested and taken to Camp Westerbork. There were now almost no Jews left in Amsterdam.',
     image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/e6/45/e64556e2-a51c-4512-976f-86e0d5a57115/niod_96799.jpg__1536x1536_q85_subsampling-2.jpg',
+    year=year1943,
+    creator=sim
+    )
+    sicily = Fact(
+    name='First Allied troops land in Europe as invasion of Sicily begins',
+    location='Sicily, Italy',
+    date_of_fact=datetime.strptime('1943-07-10', '%Y-%m-%d'),
+    bio='On 10 July 1943, the Allies started their invasion of Sicily, an island located off the southern tip of the Italian mainland. They brought troops and equipment ashore, by air and by sea. The bad weather made the operation difficult but also provided the element of surprise. The Germans and Italians were not expecting an attack in those strong winds.By the end of the first day, the Allies had conquered two ports. This allowed new troops to land quickly. After a fierce battle, the Allies gained ground. By the end of July, Germany and Italy started to withdraw their troops. Two weeks later, all of Sicily was in the hands of the Allies.From Sicily, the British and Americans were able to move into the Italian mainland and start liberating Europe.',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/e2/cf/e2cf1d3c-5e1d-43c1-a645-68790bfef674/iwm_018.jpg__1536x1536_q85_subsampling-2.jpg',
     year=year1943,
     creator=sim
     )
@@ -262,11 +271,135 @@ with app.app_context():
     location='Italy',
     date_of_fact=datetime.strptime('1943-09-03', '%Y-%m-%d'),
     bio='Mussolini had been thrown out of office and the new government of Italy surrendered to the British and the USA. They then agreed to join the allies. The Germans took control of the Italian army, freed Mussolini from imprisonment and set him up as head of a puppet government in Northern Italy. This blocked any further allied advance through Italy.',
-    image='https://media.pri.org/s3fs-public/styles/story_main/public/images/2019/03/benito_mussolini_and_adolf_hitler.jpg?itok=GOpLMhw8',
+    image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOfArG3HjGcj5UOu1AFwFuGFYQNqkxs7_TeSD6BXB34UrNraZjyw',
     year=year1943,
     creator=sim
     )
 
+    year1944 = Year(
+    year=1944
+    )
+    dday = Fact(
+    name='D-Day: The Allied Forces land in France',
+    location='Normandy, France',
+    date_of_fact=datetime.strptime('1944-06-06', '%Y-%m-%d'),
+    bio='On 6 June 1944, shortly after midnight, D-Day, a huge military operation, began. Over 5,000 ships transported 150,000 allied soldiers and 1,500 tanks to the coast of Normandy in France.For two years, the Allies had been preparing for Operation Overlord. The purpose of the operation was to set up a landing base on the European mainland. From there, the Allies would be able to liberate the countries that had been occupied by Germany and move on towards Berlin. And if Germany also had to fight in the West, it would make things a bit easier on the Soviet Union.The Allies landed in a few places along the coast of Normandy. The attack was backed up by bombardments and paratroopers. In some places, they were easily able to push back the German defence, but in others, resistance was fierce. On ‘Omaha Beach’, the American bombers did not manage to hit the German line of defence well. There, German troops shot down the soldiers trying to land. Some did not even get that far and drowned as soon as they left their ships.By the end of D-Day, the Allies had established a base on the mainland. The Germans tried to hold out as long as possible It took another two months of fighting in Normandy before the Allies succeeded in moving further into France. On 15 August, the Allies also landed in the south of France. Paris was liberated on 25 August and by mid-September 1944, the German army had almost been forced out of France.',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/2d/a1/2da15230-bd27-4465-b04b-267ac2cb96a5/iwm_007.jpg__1536x1536_q85_subsampling-2.jpg',
+    year=year1944,
+    creator=sim
+    )
+    assassinate = Fact(
+    name='German officers attempt to assassinate Hitler (Operation Valkyrie)',
+    location='Wolfs Lair, Germany',
+    date_of_fact=datetime.strptime('1944-07-20', '%Y-%m-%d'),
+    bio='On 20 July 1944, during a meeting with Adolf Hitler, German officer Claus von Stauffenberg placed a bomb under the table. After Von Stauffenberg had left, the bomb went off. As if by a miracle, Hitler survived the attack. He had some burns and abrasions, and the bang had ruptured his eardrums. That very evening, his voice could be heard on German radio to let the people know that he was still alive.The conspiracy of which Von Stauffenberg was a member, had failed. A large number of German army officers had wanted to get rid of Hitler. The people involved each had their own reasons for participating in the conspiracy. Some wanted more influence and power, others wanted to prevent Hitler from destroying Germany in a senseless war.Shortly after the attempt, hundreds of arrests were made. The leaders of the attempt were sentenced to death in a show trial.',
+    image='https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bundesarchiv_Bild_146-1972-025-10%2C_Hitler-Attentat%2C_20._Juli_1944.jpg/300px-Bundesarchiv_Bild_146-1972-025-10%2C_Hitler-Attentat%2C_20._Juli_1944.jpg',
+    year=year1944,
+    creator=sim
+    )
+    majdanek = Fact(
+    name='Red Army discovers Majdanek camp',
+    location='Lublin, Poland',
+    date_of_fact=datetime.strptime('1944-07-22', '%Y-%m-%d'),
+    bio='On 22 July 1944, Soviet troops reached the Polish city of Lublin. Here, they discovered the Majdanek labour and extermination camp, which was situated close to the city. The guards had already left.The Nazis had tried to erase their traces. Barracks had been demolished, bodies of murdered people had been burned, and the camp archives had been destroyed. But many barracks were still standing, and the gas chambers and some crematoria were still intact. Many prisoners had been left behind.Around 78,000 people were murdered in the camp, 59,000 of whom were Jews.It was the first concentration camp the Allies discovered. The Russians invited journalists to the camp. A month later, newspapers were writing about the evidence of the mass murder by the Nazis for the first time.',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/24/38/2438fceb-3ed2-4aa9-aaea-66ba00943b9a/ushmm_754295.jpg__1536x1536_q85_subsampling-2.jpg',
+    year=year1944,
+    creator=sim
+    )
+    paris_france = Fact(
+    name='Paris liberated',
+    location='Paris, France',
+    date_of_fact=datetime.strptime('1944-07-22', '%Y-%m-%d'),
+    bio='On 25th August 1944 The French capital of Paris was liberated from the Germans, as allied troops stormed in and overthrew the enemy.',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/24/38/2438fceb-3ed2-4aa9-aaea-66ba00943b9a/ushmm_754295.jpg__1536x1536_q85_subsampling-2.jpg',
+    year=year1944,
+    creator=sim
+    )
+
+    year1945 = Year(
+    year=1945
+    )
+    yalta = Fact(
+    name='Allied leaders shape the post-war world at the Yalta Conference',
+    location='Yalta',
+    date_of_fact=datetime.strptime('1945-02-04', '%Y-%m-%d'),
+    bio='The war leaders agreed that Germany should be forced to surrender unconditionally and would be divided into four zones between Britain, the Soviet Union, France and the United States. It was also agreed that the Soviet Union would enter the war against Japan after Germany was defeated.',
+    image='https://upload.wikimedia.org/wikipedia/commons/0/05/Yalta_Conference_%28Churchill%2C_Roosevelt%2C_Stalin%29_%28B%26W%29.jpg',
+    year=year1945,
+    creator=sim
+    )
+    march = Fact(
+    name='Death marches from the concentration camps',
+    location='Germany',
+    date_of_fact=datetime.strptime('1945-03-30', '%Y-%m-%d'),
+    bio='By the summer of 1944, the Germans were losing more and more territory to the Soviet army. The front was shifting to the west so fast that the Nazis were afraid that their concentration and extermination camps would be discovered. And so, Himmler, head of the SS, decided to bring prisoners from Eastern Europe back to Germany. The camps would be emptier, the prisoners would not be able to tell the enemy anything, and they could still be used as forced labourers.First, the prisoners were brought west by train. But from the autumn onwards, with the Soviets advancing, the prisoners had to walk long distances. The prisoners called these marches death marches. Under severe winter weather conditions, they were made to walk hundreds of kilometres without warm clothes and shoes, food or shelter. Those who were unable to keep up, were shot or beaten to death. Chances of survival were very slim indeed.',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/71/f9/71f9daae-df01-457e-8d7e-21076d6c5707/dachau-dodenmars.jpg__1536x1536_q85_subsampling-2.jpg',
+    year=year1945,
+    creator=sim
+    )
+    belsen = Fact(
+    name='British troops liberate the concentration camp at Bergen-Belsen, Germany',
+    location='Lower Saxony, Germany',
+    date_of_fact=datetime.strptime('1945-04-15', '%Y-%m-%d'),
+    bio='The liberation of Bergen-Belsen brought the horrors of Nazi genocide home to the British public when film and photographs of the camp appeared in British newspapers and cinemas. Conditions at Bergen-Belsen were so desperate that more than 10,000 prisoners died in the weeks after the liberation of the camp, despite the best efforts of the Allies to keep them alive. Millions were murdered to satisfy Nazi theories about racial-biological purity, at least six million of whom were Jews.',
+    image='https://encyclopedia.ushmm.org/images/large/0de1e3b6-07b0-4bc4-80e5-e8cfe82ebe35.jpg.pagespeed.ce.9VEkIg3rNi.jpg',
+    year=year1945,
+    creator=sim
+    )
+    suicide = Fact(
+    name='Hitler commits suicide',
+    location='Underground Bunker Berlin, Germany',
+    date_of_fact=datetime.strptime('1945-04-30', '%Y-%m-%d'),
+    bio='The German leader, Adolf Hitler committed suicide in his bombproof shelter together with his mistress, Eva Braun, who he had, at the last minute, made his wife',
+    image='https://www.history.com/.image/t_share/MTU3ODc3NjU2NDc3MDUwMTg1/this-day-in-history-04301945---hitler-commits-suicide.jpg',
+    year=year1945,
+    creator=sim
+    )
+    conquer = Fact(
+    name='The Red Army conquers Berlin',
+    location='Germany',
+    date_of_fact=datetime.strptime('1945-05-02', '%Y-%m-%d'),
+    bio='On 2 May 1945, Soviet troops occupied the Berlin Reichstag and planted the Soviet flag on its roof. It was the culmination of a two-week battle for the German capital. The military operation started on 16 April with a major attack on the Seelow Heights, the German defence line near the river Oder. During this attack, the Soviet army fired one million grenades. All night, the horizon was lit by explosions and the searchlights that dazzled the German army. After two days of heavy fighting, the Red Army broke through the German defence, and on 25 April, the Soviet army had surrounded Berlin. Hitler had ordered his troops to defend the city ‘to the last man’. The streets were barricaded, to stop the tanks and soldiers from coming through. Due to a shortage of soldiers, the boys of the Hitlerjugend and the old men of the Volkssturm were ordered to help defend the city. With their small arms and grenades, they did not stand a chance against the Red Army, and many of them died a pointless death. On 2 May, Helmuth Weidling, the commander of the Berlin defence forces, surrendered. Germany was now almost completely defeated. ',
+    image='https://annefrank.freetls.fastly.net/media/filer_public_thumbnails/filer_public/1d/6c/1d6c8250-07fb-404d-907f-1f2709327a9d/sovjet-vlag-op-rijksdag-2-mei-1945-berlijn.jpg__1536x1536_q85_subsampling-2.jpg',
+    year=year1945,
+    creator=sim
+    )
+    ve = Fact(
+    name='Britain celebrates the end of war on Victory in Europe Day',
+    location='Europe',
+    date_of_fact=datetime.strptime('1945-05-08', '%Y-%m-%d'),
+    bio='German forces had been utterly defeated by the end of April 1945. Adolf Hitler committed suicide on 30 April as Soviet forces closed in on his Berlin bunker. The German Grand Admiral Karl Dönitz surrendered to Allied General Dwight Eisenhower in France on 7 May. The following day was officially celebrated in Britain as Victory in Europe Day. The entire country came to a standstill as people celebrated the end of war.',
+    image='https://www.explorica.ca/-/media/Images/Landing%20Page%20Images/canadian-history/VE%20Day%20Image.ashx',
+    year=year1945,
+    creator=sim
+    )
+    election = Fact(
+    name='Churchill loses election',
+    location='Europe',
+    date_of_fact=datetime.strptime('1945-07-05', '%Y-%m-%d'),
+    bio='Winston Churchill lost the election to Clement Atlee’s Labour Party. The Labour party promised sweeping social reforms including nationalisation of the coal and railway industries and the creation of a welfare state. The Labour party gained 393 seats to the Conservatives 213. It was generally accepted that the landslide victory for Labour was due to the men and women of the armed services who did not want to resume civilian life under the conditions that they had before they entered service.?',
+    image='http://www.may2015.com/wp-content/uploads/2014/12/3329137-1024x825.jpg',
+    year=year1945,
+    creator=sim
+    )
+    bomb = Fact(
+    name='Victory over Japan Day marks the end of World War Two',
+    location='Hiroshima, Nagasaki, Japan',
+    date_of_fact=datetime.strptime('1945-08-15', '%Y-%m-%d'),
+    bio='On 6 August, an atomic bomb was dropped on the Japanese city of Hiroshima by the American bomber Enola Gay. Three days later, a second bomb was dropped on the port city of Nagasaki. In all, 140,000 people perished. Less than a week later, the Japanese leadership agreed to an unconditional surrender, and the Emperor Hirohito broadcast his nations the capitulation over the radio. Victory over Japan day also marked the end of World War Two.',
+    image='http://historyconflicts.com/wp-content/uploads/2017/04/hiroshima-bombing-article-about-atomic-bomb.jpg',
+    year=year1945,
+    creator=sim
+    )
+    nations = Fact(
+    name='United Nations comes into existence with Britain as a founder member',
+    location='Europe',
+    date_of_fact=datetime.strptime('1945-10-24', '%Y-%m-%d'),
+    bio='At the Yalta Conference in early 1945, the Big Three of Britains Winston Churchill, US President Franklin D Roosevelt and Soviet leader Joseph Stalin agreed to establish a new global organisation - the United Nations. The structure and charter of the organisation were established at another conference in San Francisco. Britain became one of the five security council members, with a power of veto. On 24 October, the UN officially came into existence when its members ratified its charter.',
+    image='https://www.norway.no/contentassets/b898d76a601844e8b523ec3ce623ccbd/236062.jpg?preset=large&v=38052596',
+    year=year1945,
+    creator=sim
+    )
 
     db.session.add(sim)
     db.session.add(comment_one)
@@ -306,7 +439,24 @@ with app.app_context():
     db.session.add(year1943)
     db.session.add(leave_amsterdam)
     db.session.add(last_raid)
+    db.session.add(sicily)
     db.session.add(italy)
 
+    db.session.add(year1944)
+    db.session.add(dday)
+    db.session.add(assassinate)
+    db.session.add(majdanek)
+    db.session.add(paris_france)
+
+    db.session.add(year1945)
+    db.session.add(yalta)
+    db.session.add(belsen)
+    db.session.add(march)
+    db.session.add(suicide)
+    db.session.add(conquer)
+    db.session.add(ve)
+    db.session.add(election)
+    db.session.add(bomb)
+    db.session.add(nations)
 
     db.session.commit()
