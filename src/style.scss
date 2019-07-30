@@ -14,12 +14,42 @@ a {
 
 .home-page {
   background-color: #3b4351;
+  position: relative;
+}
+
+.home-page:before {
+  content: '';
+  position: absolute;
+  left: 49.65%;
+  top: 0;
+  height: 100%;
+  border-left: 5px solid white;
+}
+
+.home-page .accordion-container {
+  position: relative;
+}
+
+.home-page .accordion-container .accordion .accordion-header {
+  background-color: #3b4351;
+  padding: 0;
+  margin: 2.2rem .4rem;
 }
 
 .fact-image {
   width: 90%;
   height: 200px;
   padding: 0px 20px 40px 20px;
+}
+
+@media (max-width: 1170px) {
+  .home-page:before {
+    left: 5%;
+  }
+  .home-page .accordion-container .accordion .accordion-header {
+    text-align: left;
+    padding-left: 1rem;
+  }
 }
 
 
@@ -97,11 +127,45 @@ a {
   font-size: 10px;
 }
 
-.timeline-hidden {
-  display: none;
+.card.auth {
+  max-width: 50%;
+  padding: 10px;
 }
 
-.accordion {
+.card.auth form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.card.auth form .form-group {
+  justify-content: center;
+}
 
+.card.auth form .auth-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card.auth form .auth-btn button {
+  width: 50%;
+  margin-top: 20px;
+}
+
+.create-new {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.card.new-fact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card.new-fact form .auth-btn button {
+  width: 50%;
+  margin-top: 20px;
 }

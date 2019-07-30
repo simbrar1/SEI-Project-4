@@ -28,61 +28,66 @@ class Register extends React.Component {
   render() {
     return (
       <main className="section">
-        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <div className="col-2 col-sm-12">
-              <label className="form-label" htmlFor="email">Username</label>
+        <div className="card auth">
+          <form className="form-horizontal" onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <div className="col-3 col-sm-12">
+                <label className="form-label" htmlFor="email">Username</label>
+              </div>
+              <div className="col-4 col-sm-12">
+                <input
+                  className="form-input"
+                  name="username"
+                  type="text"
+                  placeholder="username"
+                  onChange={this.handleChange}/>
+              </div>
             </div>
-            <div className="col-4 col-sm-12">
-              <input
-                className="form-input"
-                name="username"
-                type="text"
-                placeholder="username"
-                onChange={this.handleChange}/>
+            <div className="form-group">
+              <div className="col-3 col-sm-12">
+                <label className="form-label" htmlFor="email">Email</label>
+              </div>
+              <div className="col-4 col-sm-12">
+                <input
+                  className="form-input"
+                  name="email"
+                  type="text"
+                  placeholder="Email"
+                  onChange={this.handleChange}/>
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-2 col-sm-12">
-              <label className="form-label" htmlFor="email">Email</label>
+            <div className="form-group">
+              <div className="col-3 col-sm-12">
+                <label className="form-label" htmlFor="email">Password</label>
+              </div>
+              <div className="col-4 col-sm-12">
+                <input
+                  className="form-input"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}/>
+              </div>
             </div>
-            <div className="col-4 col-sm-12">
-              <input
-                className="form-input"
-                name="email"
-                type="text"
-                placeholder="Email"
-                onChange={this.handleChange}/>
+            <div className="form-group">
+              <div className="col-3 col-sm-12">
+                <label className="form-label" htmlFor="email">Password Confirmation</label>
+              </div>
+              <div className="col-4 col-sm-12">
+                <input
+                  className="form-input"
+                  name="password_confirmation"
+                  type="password"
+                  placeholder="Password Confirmation"
+                  onChange={this.handleChange}/>
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-2 col-sm-12">
-              <label className="form-label" htmlFor="email">Password</label>
+            <div className="auth-btn">
+              <button className="btn btn-sm">Register</button>
             </div>
-            <div className="col-4 col-sm-12">
-              <input
-                className="form-input"
-                name="password"
-                type="password"
-                placeholder="Password"
-                onChange={this.handleChange}/>
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="col-2 col-sm-12">
-              <label className="form-label" htmlFor="email">Password Confirmation</label>
-            </div>
-            <div className="col-4 col-sm-12">
-              <input
-                className="form-input"
-                name="password_confirmation"
-                type="password"
-                placeholder="Password Confirmation"
-                onChange={this.handleChange}/>
-            </div>
-          </div>
-          <button className="btn btn-sm">Login</button>
-        </form>
+
+          </form>
+        </div>
       </main>
     )
   }

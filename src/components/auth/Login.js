@@ -13,8 +13,8 @@ class Login extends React.Component {
 
   handleChange({ target: { name, value } }) {
     const data = { ...this.state.data, [name]: value }
-    const errors = { ...this.state.errors, [name]: '' }
-    this.setState({ data, errors })
+    const error = { ...this.state.error, [name]: '' }
+    this.setState({ data, error: '' })
   }
 
   handleSubmit(e) {
@@ -33,35 +33,39 @@ class Login extends React.Component {
   render() {
     return (
       <main className="section">
-        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <div className="col-1 col-sm-12">
-              <label className="form-label" htmlFor="email">Email</label>
+        <div className="card auth">
+          <form className="form-horizontal" onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <div className="col-2 col-sm-12">
+                <label className="form-label" htmlFor="email">Email</label>
+              </div>
+              <div className="col-4 col-sm-12">
+                <input
+                  className={`form-input ${this.state.error ? 'is-danger' : ''} `}
+                  name="email"
+                  type="text"
+                  placeholder="Email"
+                  onChange={this.handleChange}/>
+              </div>
             </div>
-            <div className="col-4 col-sm-12">
-              <input
-                className="form-input"
-                name="email"
-                type="text"
-                placeholder="Email"
-                onChange={this.handleChange}/>
+            <div className="form-group">
+              <div className="col-2 col-sm-12">
+                <label className="form-label" htmlFor="password">Password</label>
+              </div>
+              <div className="col-4 col-sm-12">
+                <input
+                  className="form-input"
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}/>
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-1 col-sm-12">
-              <label className="form-label" htmlFor="password">Password</label>
+            <div className="auth-btn">
+              <button className="btn btn-sm">Login</button>
             </div>
-            <div className="col-4 col-sm-12">
-              <input
-                className="form-input"
-                name="password"
-                type="password"
-                placeholder="Password"
-                onChange={this.handleChange}/>
-            </div>
-          </div>
-          <button className="btn btn-sm">Login</button>
-        </form>
+          </form>
+        </div>
       </main>
 
     )

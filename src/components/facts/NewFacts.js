@@ -45,14 +45,18 @@ class NewFacts extends React.Component {
     if (!this.state.years) return null
     return (
       <section className="section">
-        <div className="container">
-          <FactsForm
-            data={this.state.data}
-            years={this.state.years}
-            submitText="Create"
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
+        <div className="card new-fact">
+          <div className="create-new">
+            <div className="container">
+              <FactsForm
+                data={this.state.data}
+                years={this.state.years}
+                submitText="Create"
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+              />
+            </div>
+          </div>
         </div>
       </section>
     )

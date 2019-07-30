@@ -24,33 +24,37 @@ class Home extends React.Component {
     return (
       <div className="card">
         <section className="home-page">
-          {this.state.years.map(year => (
-            <div key={year.id} className="accordion">
-              <input type="radio" id={`accordion-${year.id}`} name="accordion-radio" hidden />
-              <label className="accordion-header" htmlFor={`accordion-${year.id}`}>
-                {year.year}
-              </label>
-              <div className="accordion-body">
-                <VerticalTimeline>
-                  {year.facts.sort((a,b) => new Date(a.date_of_fact) - new Date(b.date_of_fact)).map(fact => (
-                    <VerticalTimelineElement key={fact.id}
-                      className="vertical-timeline-element"
-                      date={<img className="fact-image" src={fact.image} />}
-                      iconStyle={{ background: 'rgb(59, 67, 81)', color: '#fff' }}
-                      icon=""
-                    >
-                      <Link to={`/facts/${fact.id}`}>
-                        <h5 className="dates">{fact.date_of_fact}</h5>
-                        <h5 className="location">{fact.location}</h5>
-                        <h4 className="vertical-timeline-element-title">{fact.name}</h4>
+          <div className="accordion-container">
+            {this.state.years.map(year => (
+              <div key={year.id} className="accordion">
+                <input type="checkbox" id={`accordion-${year.id}`} name="accordion-checkbox" hidden />
+                <a href={`#accordion-${year.id}`}>
+                  <label className="accordion-header" htmlFor={`accordion-${year.id}`}>
+                    {year.year}
+                  </label>
+                </a>
+                <div className="accordion-body">
+                  <VerticalTimeline>
+                    {year.facts.sort((a,b) => new Date(a.date_of_fact) - new Date(b.date_of_fact)).map(fact => (
+                      <VerticalTimelineElement key={fact.id}
+                        className="vertical-timeline-element"
+                        date={<img className="fact-image" src={fact.image} />}
+                        iconStyle={{ background: 'rgb(59, 67, 81)', color: '#fff' }}
+                        icon=""
+                      >
+                        <Link to={`/facts/${fact.id}`}>
+                          <h5 className="dates">{fact.date_of_fact}</h5>
+                          <h5 className="location">{fact.location}</h5>
+                          <h4 className="vertical-timeline-element-title">{fact.name}</h4>
 
-                      </Link>
-                    </VerticalTimelineElement>
-                  ))}
-                </VerticalTimeline>
+                        </Link>
+                      </VerticalTimelineElement>
+                    ))}
+                  </VerticalTimeline>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
       </div>
     )
