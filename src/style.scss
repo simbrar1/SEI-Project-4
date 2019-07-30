@@ -169,3 +169,26 @@ a {
   width: 50%;
   margin-top: 20px;
 }
+
+.form-group {
+  margin-top: 10px;
+}
+
+.form-horizontal {
+  display: flex;
+  justify-content: center;
+
+  .text-red {
+  color: red;
+  }
+  .border-red {
+  color: red;
+  border: .05rem solid red;
+  border-radius: .1rem;
+  }
+
+  small {
+    align-self: center;
+  }
+
+}

@@ -12,7 +12,7 @@ const CommentForm = ({ content, handleCommentChange, handleCommentSubmit }) => (
         value={content || ''}>
       </textarea>
     </div>
-    <button className="button" type="submit">Post Comment</button>
+    <button className="btn btn-sm btn-link" type="submit">Post Comment</button>
   </form>
 )
 

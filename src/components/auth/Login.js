@@ -13,7 +13,7 @@ class Login extends React.Component {
 
   handleChange({ target: { name, value } }) {
     const data = { ...this.state.data, [name]: value }
-    const error = { ...this.state.error, [name]: '' }
+    // const error = { ...this.state.error, [name]: '' }
     this.setState({ data, error: '' })
   }
 
@@ -26,11 +26,12 @@ class Login extends React.Component {
         console.log(res.data)
         this.props.history.push('/')
       })
-      .catch(() => this.setState({ error: 'Invalid Crendentials' }))
+      .catch(() => this.setState({ error: 'Invalid Credentials' }))
   }
 
 
   render() {
+    console.log(this.state.error)
     return (
       <main className="section">
         <div className="card auth">
@@ -41,12 +42,13 @@ class Login extends React.Component {
               </div>
               <div className="col-4 col-sm-12">
                 <input
-                  className={`form-input ${this.state.error ? 'is-danger' : ''} `}
+                  className={`form-input ${this.state.error ? 'text-red border-red' : ''} `}
                   name="email"
                   type="text"
                   placeholder="Email"
                   onChange={this.handleChange}/>
               </div>
+
             </div>
             <div className="form-group">
               <div className="col-2 col-sm-12">
@@ -54,13 +56,14 @@ class Login extends React.Component {
               </div>
               <div className="col-4 col-sm-12">
                 <input
-                  className="form-input"
+                  className={`form-input ${this.state.error ? 'text-red border-red' : ''} `}
                   name="password"
                   type="password"
                   placeholder="Password"
                   onChange={this.handleChange}/>
               </div>
             </div>
+            {this.state.error && <small className="text-red">{this.state.error}</small>}
             <div className="auth-btn">
               <button className="btn btn-sm">Login</button>
             </div>
@@ -74,34 +77,3 @@ class Login extends React.Component {
 }
 
 export default Login
-
-// <main className="section">
-//   <div className="form-container">
-//     <form onSubmit={this.handleSubmit}>
-//       <h2 className="form-title">Login</h2>
-//       <div className="field">
-//         <div className="control">
-//           <input
-//             className={`input ${this.state.error ? 'is-danger' : ''}`}
-//             name="email"
-//             placeholder="Email"
-//             onChange={this.handleChange}
-//           />
-//         </div>
-//       </div>
-//       <div className="field">
-//         <div className="control">
-//           <input
-//             className={`input ${this.state.error ? 'is-danger' : ''}`}
-//             type="password"
-//             name="password"
-//             placeholder="Password"
-//             onChange={this.handleChange}
-//           />
-//         </div>
-//         {this.state.error && <small className="help is-danger">{this.state.error}</small>}
-//       </div>
-//       <button type="submit" className="button is-danger">Login</button>
-//     </form>
-//   </div>
-// </main>

@@ -36,12 +36,13 @@ class Register extends React.Component {
               </div>
               <div className="col-4 col-sm-12">
                 <input
-                  className="form-input"
+                  className={`form-input ${this.state.errors.username ? 'text-red border-red' : ''} `}
                   name="username"
                   type="text"
                   placeholder="username"
                   onChange={this.handleChange}/>
               </div>
+              {this.state.errors.username && <small className="text-red">{this.state.errors.username}</small>}
             </div>
             <div className="form-group">
               <div className="col-3 col-sm-12">
@@ -49,12 +50,13 @@ class Register extends React.Component {
               </div>
               <div className="col-4 col-sm-12">
                 <input
-                  className="form-input"
+                  className={`form-input ${this.state.errors.email ? 'text-red border-red' : ''} `}
                   name="email"
                   type="text"
                   placeholder="Email"
                   onChange={this.handleChange}/>
               </div>
+              {this.state.errors.email && <small className="text-red">{this.state.errors.email}</small>}
             </div>
             <div className="form-group">
               <div className="col-3 col-sm-12">
@@ -62,12 +64,13 @@ class Register extends React.Component {
               </div>
               <div className="col-4 col-sm-12">
                 <input
-                  className="form-input"
+                  className={`form-input ${this.state.errors.password ? 'text-red border-red' : ''} `}
                   name="password"
                   type="password"
                   placeholder="Password"
                   onChange={this.handleChange}/>
               </div>
+              {this.state.errors.password && <small className="text-red">{this.state.errors.password}</small>}
             </div>
             <div className="form-group">
               <div className="col-3 col-sm-12">
@@ -75,13 +78,14 @@ class Register extends React.Component {
               </div>
               <div className="col-4 col-sm-12">
                 <input
-                  className="form-input"
+                  className={`form-input ${this.state.errors.password_confirmation ? 'text-red border-red' : ''} `}
                   name="password_confirmation"
                   type="password"
                   placeholder="Password Confirmation"
                   onChange={this.handleChange}/>
               </div>
             </div>
+            {this.state.errors.password_confirmation && <small className="text-red">{this.state.errors.password_confirmation}</small>}
             <div className="auth-btn">
               <button className="btn btn-sm">Register</button>
             </div>

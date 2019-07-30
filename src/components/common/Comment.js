@@ -4,7 +4,7 @@ const Comment = ({ content, id, user, handleCommentDelete, isCommentOwner }) => 
   <div >
     <div className="1">{content}</div>
     {isCommentOwner(user) && <button
-      className="btn btn-sm"
+      className="btn btn-sm btn-link"
       onClick={() => handleCommentDelete(id)}
     >
       Delete Comment
