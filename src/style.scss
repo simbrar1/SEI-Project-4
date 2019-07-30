@@ -13,13 +13,13 @@ a {
 
 
 .home-page {
-  background-color: lightgrey;
+  background-color: #3b4351;
 }
 
 .fact-image {
-  width: 45%;
+  width: 90%;
   height: 200px;
-  padding: 0px 7px 40px 7px;
+  padding: 0px 20px 40px 20px;
 }
 
 
@@ -33,22 +33,14 @@ a {
   color: #303742 !important;
 }
 
-// .vertical-timeline-element-content p {
-//   color: blue !important;
-//   font-size: 0.75rem !important;
-// }
-//bio for the facts
 
-
-.date {
-  font-weight: bold;
-}
 
 .accordion-header {
   text-align: center;
   font-size: 40px;
-  color: 807fe2;
+  color: white;
   font-family: Merriweather;
+
 }
 
 .footer {
@@ -64,6 +56,10 @@ a {
   max-height: 75vh;
 }
 
+.columns {
+  justify-content: center;
+}
+
 
 .img-responsive {
   width: 75%;
@@ -73,24 +69,39 @@ a {
 .location {
   color: lightgrey !important;
   text-transform: uppercase;
-
 }
+//fact on the home page
 
  .dates {
    color: lightgrey !important;
  }
+//date on home page of the fact
+
 
 .card {
-  max-width: 50%;
+  max-width: 70%;
   margin: auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.9);
   transition: 0.3s;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
 }
 
 .card .card-image img {
   width: 100%;
+}
+
+.delete-button {
+  font-size: 10px;
+}
+
+.timeline-hidden {
+  display: none;
+}
+
+.accordion {
+
+
 }

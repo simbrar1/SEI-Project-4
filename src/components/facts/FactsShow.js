@@ -2,22 +2,28 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
-
+import CommentForm from '../common/CommentForm'
+import Comment from '../common/Comment'
 
 class FactsShow extends React.Component {
   constructor() {
     super()
 
-    this.state = { fact: null}
+    this.state = { fact: null, comment: null}
     this.handleCommentChange = this.handleCommentChange.bind(this)
     this.handleCommentSubmit = this.handleCommentSubmit.bind(this)
+    this.handleCommentDelete = this.handleCommentDelete.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
     this.isOwner = this.isOwner.bind(this)
   }
 
   componentDidMount() {
+    this.getFacts()
+  }
+
+  getFacts() {
     axios.get(`/api/facts/${this.props.match.params.id}`)
-      .then(res => this.setState({ fact: res.data}))
+      .then(res => this.setState({ fact: res.data, comment: ''}))
       .catch(err => console.log(err))
   }
 
@@ -29,25 +35,31 @@ class FactsShow extends React.Component {
       .catch(err => console.log(err.response))
   }
 
-  handleCommentChange({ target: { name, value } }) {
-    const comment = { ...this.state.comment, [name]: value }
+  handleCommentChange({ target: { value } }) {
+    const comment = value
     this.setState({ comment })
   }
 
   handleCommentSubmit(e){
     e.preventDefault()
-
-    axios.post(`/api/facts/${this.props.match.params.id}/comments`, this.state.comment, {
+    const comment = { content: this.state.comment }
+    axios.post(`/api/facts/${this.props.match.params.id}/comments`, comment, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-
-      .then(res => this.setState({ fact: res.data, comment: {} }))
+      .then(() => this.getFacts())
       .catch(err => console.log(err.response))
   }
 
+  handleCommentDelete(id) {
+    axios.delete(`/api/facts/${this.props.match.params.id}/comments/${id}`, {
+      headers: { 'Authorization': `${Auth.getToken()}` }
+    })
+      .then(() => this.getFacts())
+      .catch(err => console.log(err))
+  }
 
   isCommentOwner(user) {
-    return Auth.getPayload().sub === user._id
+    return Auth.getPayload().sub === user.id
   }
 
   isOwner() {
@@ -57,9 +69,8 @@ class FactsShow extends React.Component {
   render() {
     if (!this.state.fact) return null
     const { fact } =  this.state
-    this.isOwner()
+    console.log('state', this.state)
     return (
-
       <div className="card">
         <div className="card-header">
           <div className="card-title h4">{fact.name}</div>
@@ -80,6 +91,22 @@ class FactsShow extends React.Component {
         Edit
           </Link></button>}
         </span>
+        {fact.comments.map(comment => console.log('comment', comment))}
+        {fact.comments.map(comment => (
+          <Comment
+            key={comment.id}
+            handleCommentDelete={this.handleCommentDelete}
+            isCommentOwner={this.isCommentOwner}
+            {...comment}
+          />)
+        )}
+        {Auth.isAuthenticated() &&
+          <CommentForm
+            content={this.state.comment}
+            handleCommentChange={this.handleCommentChange}
+            handleCommentSubmit={this.handleCommentSubmit}
+          />
+        }
       </div>
     )
   }
@@ -88,7 +115,3 @@ class FactsShow extends React.Component {
 }
 
 export default FactsShow
-
-//took out .id at the end of the is owner
-// isOwner() {
-//   return Auth.getPayload().sub === this.state.fact.creator.id

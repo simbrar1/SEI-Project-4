@@ -41,8 +41,6 @@ class NewFacts extends React.Component {
       .catch(err => console.log(err.response.data))
   }
 
-
-
   render() {
     if (!this.state.years) return null
     return (

@@ -11,8 +11,7 @@ with app.app_context():
     db.create_all()
 
 
-#USER login
-
+    #USER login
     sim, errors = user_schema.load({
     'username': 'sim',
     'email': 'sim@email',
@@ -50,7 +49,8 @@ with app.app_context():
 
     comment_one = Comment(
     content="I did not know this happened. Great fact",
-    fact=anschluss
+    fact=anschluss,
+    user=sim
     )
 
     munich_agreement = Fact(

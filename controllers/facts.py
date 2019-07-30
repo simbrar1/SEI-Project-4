@@ -63,6 +63,7 @@ def delete(fact_id):
 
 #create comment
 @api.route('/facts/<int:fact_id>/comments', methods=['POST'])
+@secure_route
 def comment_create(fact_id):
     fact = Fact.query.get(fact_id)
     if not fact:
@@ -72,11 +73,13 @@ def comment_create(fact_id):
     if errors:
         return jsonify(errors), 422
     comment.fact = fact
+    comment.user = g.current_user
     comment.save()
     return comment_schema.jsonify(comment), 202
 
 
 #DELETE COMMENT
+@secure_route
 @api.route('/facts/<int:fact_id>/comments/<int:comment_id>', methods=['DELETE'])
 def comment_delete(**kwargs):
     comment = Comment.query.get(kwargs['comment_id'])

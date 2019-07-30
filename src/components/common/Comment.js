@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Comment = ({ text, _id, user, handleCommentDelete, isCommentOwner }) => (
-  <div className="card">
-    <div className="card-body">{text}</div>
+const Comment = ({ content, id, user, handleCommentDelete, isCommentOwner }) => (
+  <div >
+    <div className="1">{content}</div>
     {isCommentOwner(user) && <button
-      className="button"
-      onClick={() => handleCommentDelete(_id)}
+      className="btn btn-sm"
+      onClick={() => handleCommentDelete(id)}
     >
       Delete Comment
     </button>}

@@ -34,6 +34,8 @@ class Comment(db.Model, BaseModel):
     __tablename__ = 'comments'
 
     content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user = db.relationship('User', backref='comments')
     fact_id = db.Column(db.Integer, db.ForeignKey('facts.id'))
     fact = db.relationship('Fact', backref='comments')
 
@@ -41,3 +43,5 @@ class CommentSchema(ma.ModelSchema, BaseSchema):
 
     class Meta:
         model = Comment
+
+    user = fields.Nested('UserSchema', only=('id', 'username'))

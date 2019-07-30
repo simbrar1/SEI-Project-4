@@ -1,18 +1,16 @@
 import React from 'react'
 
-const CommentForm = ({ text, handleCommentChange, handleCommentSubmit }) => (
+const CommentForm = ({ content, handleCommentChange, handleCommentSubmit }) => (
   <form onSubmit={handleCommentSubmit}>
-    <div className="field">
-      <div className="control">
-        <textarea
-          className="textarea"
-          placeholder="Comment......"
-          onChange={handleCommentChange}
-          name="text"
-          value={text || ''}
-        >
-        </textarea>
-      </div>
+
+    <div className="form-group">
+      <textarea className="form-input"
+        placeholder="Leave a Comment..."
+        rows="1"
+        onChange={handleCommentChange}
+        name="content"
+        value={content || ''}>
+      </textarea>
     </div>
     <button className="button" type="submit">Post Comment</button>
   </form>
